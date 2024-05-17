@@ -1,0 +1,24 @@
+<div class="author">
+    <hi class="author_heading">Hi, I am Salma.</hi>
+    <p class="author_body">Software Developer and Content Creator.</p>
+</div>
+
+<img src="/img/vizual_-_blog.png" alt="visualisation" class="hero-image" width="981" height="528">
+
+<section class="articles">
+    <h2 class="articles_heading">Latest Posts</h2>
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post.id %>">
+                <span><%= post.title %></span>
+                <span class="article-list_date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+      <% if (nextPage !== null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">&it; View Older Posts</a>
+      <% } %>
+
+</section>
